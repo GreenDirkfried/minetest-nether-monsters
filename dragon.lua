@@ -496,7 +496,7 @@ mobs:register_mob("nether_mobs:tamed_dragon", {
 			self.accel = 6
 			self.terrain_type = 2
 			self.driver_attach_at = {x = 0, y = 1.4, z = 1}
-			self.driver_eye_offset = {x = 0, y = 5, z = 1}
+			self.driver_eye_offset = {x = 0, y = 29, z = 1}
 			self.driver_scale = {x = 0.1, y = 0.1} -- shrink driver to fit model
 		end
 
@@ -548,7 +548,7 @@ mobs:register_mob("nether_mobs:tamed_dragon", {
 self.saddle = nil
 
 			-- attach player to dragon
-			elseif (not self.driver-- and not self.child
+			elseif (not self.driver and not self.child
 			and clicker:get_wielded_item():get_name() == "mobs:saddle")
 			or self.saddle then
 
