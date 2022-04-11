@@ -495,9 +495,9 @@ mobs:register_mob("nether_mobs:tamed_dragon", {
 			self.max_speed_reverse = 4
 			self.accel = 6
 			self.terrain_type = 2
-			self.driver_attach_at = {x = 0, y = 1.4, z = 0}
-+			self.driver_eye_offset = {x = 0, y = 3, z = 0}
-+			self.driver_scale = {x = 0.1, y = 0.1} -- shrink driver to fit model
+			self.driver_attach_at = {x = 0, y = 1.4, z = 1}
+			self.driver_eye_offset = {x = 0, y = 5, z = 1}
+			self.driver_scale = {x = 0.1, y = 0.1} -- shrink driver to fit model
 		end
 
 		-- if driver present allow control of dragon
