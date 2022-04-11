@@ -446,8 +446,8 @@ mobs:register_mob("nether_mobs:tamed_dragon", {
 	blood_texture = "nether_particle.png",
 	drops = {
 		{name = "mobs:meat_raw", chance = 1, min = 5, max = 8},
-		{name = "nether_mobs:dragon_scale", chance = 1, min = 8, max = 15},
-		{name = "nether_mobs:dragon_egg", chance = 1, min = 1, max = 2},
+		{name = "nether_mobs:dragon_scale", chance = 1, min = 1, max = 4}, --less scale dropped by tamed dragon
+		--{name = "nether_mobs:dragon_egg", chance = 1, min = 1, max = 2}, --would allow scale farming!
 		{name = "nether:sand", chance = 1, min = 3, max = 5},
 		{name = "nether:rack", chance = 3, min = 2, max = 4},
 		{name = "nether:brick", chance = 5, min = 1, max = 2},
@@ -489,14 +489,15 @@ mobs:register_mob("nether_mobs:tamed_dragon", {
 	do_custom = function(self, dtime)
 
 		-- set needed values if not already present
-		if not self.v2 then
-			self.v2 = 0
+		if not self.v3 then
+			self.v3 = 0
 			self.max_speed_forward = 12
 			self.max_speed_reverse = 4
 			self.accel = 6
 			self.terrain_type = 2
-			self.driver_attach_at = {x = 3, y = y_off, z = -2}
-			self.driver_eye_offset = {x = 3, y = 3, z = 0}
+			self.driver_attach_at = {x = 0, y = 1.4, z = 0}
++			self.driver_eye_offset = {x = 0, y = 3, z = 0}
++			self.driver_scale = {x = 0.1, y = 0.1} -- shrink driver to fit model
 		end
 
 		-- if driver present allow control of dragon
@@ -564,7 +565,9 @@ self.saddle = true
 		end
 
 		-- used to capture dragon with magic lasso
-		mobs:capture_mob(self, clicker, 0, 0, 80, false, nil)
+		if mobs:capture_mob(self, clicker, nil, nil, 80, false, nil) then
+			return
+		end
 	end
 
 })
