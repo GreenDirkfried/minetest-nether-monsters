@@ -551,7 +551,7 @@ mobs:register_mob("nether_mobs:tamed_dragon", {
 self.saddle = nil
 
 			-- attach player to dragon
-		elseif (not self.driver-- and not self.child
+			elseif (not self.driver-- and not self.child
 			and clicker:get_wielded_item():get_name() == "mobs:saddle")
 			or self.saddle then
 
@@ -593,6 +593,7 @@ mobs:spawn({
 	end,
 })
 
+mobs:register_egg("nether_mobs:tamed_dragon", S("nether dragon"), "mobs_chicken_egg.png^(nether_sand.png^fire_basic_flame.png^[mask:mobs_chicken_egg_overlay.png)", 1)
 mobs:register_egg("nether_mobs:dragon", S("nether dragon"), "nether_sand.png^nether_dragon_fire.png", 1)
 
 -- to spawn childs from eggs
