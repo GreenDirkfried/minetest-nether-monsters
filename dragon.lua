@@ -373,7 +373,7 @@ mobs:register_mob("nether_mobs:dragon", {
 		{"mobs_nether_dragon_child.png"},
 	},
 	mesh = "mobs_nether_dragon.b3d",
-	replace_rate = 1/1000,
+	replace_rate = 10, --allow to spawn in the overworld without too much transformation
 	replace_what = {
 			"default:sand",
 			"default:silver_sand",
@@ -462,7 +462,7 @@ mobs:register_mob("nether_mobs:tamed_dragon", {
 		{"mobs_nether_dragon_child.png"},
 	},
 	mesh = "mobs_nether_dragon.b3d",
-	replace_rate = 1/1000,
+	replace_rate = 10, --allow to spawn in the overworld without too much transformation
 	replace_what = {
 			"default:sand",
 			"default:silver_sand",

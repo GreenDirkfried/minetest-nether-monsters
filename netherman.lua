@@ -81,7 +81,7 @@ mobs:register_mob("nether_mobs:netherman", {
 		punch_start = 74,
 		punch_end = 105,
 	},
-	replace_rate = 1/1000,
+	replace_rate = 3,
 	replace_what = {
 			"default:sand",
 			"default:silver_sand",
@@ -109,6 +109,7 @@ mobs:spawn({
 	max_light = 15,
 	name = "nether_mobs:netherman",
 	nodes = {"nether:sand", "nether:rack"},
+	--max_height = -3000, --activate if you don't want nethermen in the overworld
 	interval = 2,
 	chance = 2,
 	day_toggle = nil,
