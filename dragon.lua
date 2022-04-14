@@ -489,15 +489,18 @@ mobs:register_mob("nether_mobs:tamed_dragon", {
 	do_custom = function(self, dtime)
 
 		-- set needed values if not already present
-		if not self.v3 then
+		if not self.v3 or (self.child ~= self._child) then
+			self.v2 = 0
 			self.v3 = 0
+			self._child = self.child
 			self.max_speed_forward = 12
 			self.max_speed_reverse = 4
 			self.accel = 6
 			self.terrain_type = 2
-			self.driver_attach_at = {x = 0, y = 1.4, z = 1}
-			self.driver_eye_offset = {x = 0, y = 29, z = 1}
-			self.driver_scale = {x = 0.1, y = 0.1} -- shrink driver to fit model
+			self.driver_attach_at = {x = 0, y = (self.child and 1.3 or 1.25), z = 0}
+			self.driver_eye_offset = {x = 0, y = (self.child and 3 or 31), z = 0}
+			local scale = (self.child and 0.1 or 0.05)
+			self.driver_scale = {x = scale, y = scale} -- shrink driver to fit model
 		end
 
 		-- if driver present allow control of dragon
@@ -548,7 +551,7 @@ mobs:register_mob("nether_mobs:tamed_dragon", {
 self.saddle = nil
 
 			-- attach player to dragon
-			elseif (not self.driver and not self.child
+		elseif (not self.driver-- and not self.child
 			and clicker:get_wielded_item():get_name() == "mobs:saddle")
 			or self.saddle then
 
