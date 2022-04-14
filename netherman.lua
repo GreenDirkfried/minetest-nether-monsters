@@ -109,14 +109,14 @@ mobs:register_mob("nether_mobs:netherman", {
 
 
 mobs:spawn({
-	max_light = 15,
+	max_light = 12,
 	name = "nether_mobs:netherman",
-	nodes = {"nether:sand", "nether:rack"},
+	nodes = {"nether:sand","nether:rack","nether:rack_deep"},
 	--max_height = -3000, --activate if you don't want nethermen in the overworld
-	interval = 2,
-	chance = 2,
+	interval = 10, --15 = bright daylight
+	chance = 100,
 	day_toggle = nil,
-	active_object_count = 2,
+	active_object_count = 5,
 	on_spawn = function(self, pos)
 		pos.y = pos.y + 0.5
 		effect(pos, 30, "nether_particle.png", 0.1, 2, 3, 5)

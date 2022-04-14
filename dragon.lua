@@ -584,9 +584,9 @@ self.saddle = true
 
 mobs:spawn({
 	name = "nether_mobs:dragon",
-	nodes = {"nether:sand", "nether:rack"},
+	nodes = {"nether:rack","nether:rack_deep","nether:basalt","nether:basalt_hewn","nether:basalt_chiselled"},
         neighbours = "air",
-	max_light = 15,
+	max_light = 14, --not in bright daylight
 	interval = 100,
 	chance = 150000,
 	day_toggle = nil,
