@@ -94,6 +94,13 @@ minetest.register_craft({
         }
     })
 
+minetest.register_craft({
+				output = "nether_mobs:dragon_scale 4",
+				recipe = {
+					{"nether_mobs:dragon_scale_block"},
+				}
+		})
+
 -- Dragon Scales Armor
 
 if minetest.get_modpath("3d_armor") then
