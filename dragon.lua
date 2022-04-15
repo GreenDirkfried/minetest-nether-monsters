@@ -227,6 +227,23 @@ minetest.register_node("nether_mobs:dragon_fire", {
 	end,
 })
 
+minetest.register_node(":nether_mobs:permanent_dragon_fire", { --only avaible in creative mode
+	description = "Permanent nether dragon fire",
+	drawtype = "firelike",
+	tiles = {{
+		name = "nether_dragon_fire_animated.png",
+		animation = {type = "vertical_frames",
+			aspect_w = 16, aspect_h = 16, length = 1},
+	}},
+	inventory_image = "nether_dragon_fire.png",
+	light_source = 15,
+	groups = {snappy=1},
+	walkable = false,
+	buildable_to = false,
+	damage_per_second = 8,
+})
+
+
 -- Fire Breathing
 
 function fire_breath(pos)
