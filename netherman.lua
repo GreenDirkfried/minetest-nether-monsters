@@ -40,9 +40,9 @@ mobs:register_mob("nether_mobs:netherman", {
 	attack_type = "dogfight",
 	pathfinding = false,
 	reach = 2,
-	damage = 1,
-	hp_min = 10,
-	hp_max = 20,
+	damage = 8,
+	hp_min = 15,
+	hp_max = 25,
 	armor = 100,
 	collisionbox = {-0.4, -1, -0.4, 0.4, 0.8, 0.4},
 	visual = "mesh",
@@ -109,12 +109,14 @@ mobs:register_mob("nether_mobs:netherman", {
 
 
 mobs:spawn({
-	max_light = 12,
+	max_light = 12, --15 = bright daylight
 	name = "nether_mobs:netherman",
 	nodes = {"nether:sand","nether:rack","nether:rack_deep"},
-	--max_height = -3000, --activate if you don't want nethermen in the overworld
-	interval = 10, --15 = bright daylight
-	chance = 100,
+	--restrict spawning to the nether:
+	--max_height = nether.DEPTH_CEILING,
+	--min_height = nether.DEPTH_FLOOR,
+	interval = 8,
+	chance = 50,
 	day_toggle = nil,
 	active_object_count = 5,
 	on_spawn = function(self, pos)
