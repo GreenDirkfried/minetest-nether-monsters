@@ -492,18 +492,18 @@ mobs:register_mob("nether_mobs:tamed_dragon", {
 		{"mobs_nether_dragon_child.png"},
 	},
 	mesh = "mobs_nether_dragon.b3d",
-	replace_rate = 10, --allow to spawn in the overworld without too much transformation
-	replace_what = {
-			"default:sand",
-			"default:silver_sand",
-			"default:dirt_with_grass",
-			"default:dirt_with_snow",
-			"default:dirt_with_dry_grass",
-			"default:dirt_with_rainforest_litter",
-			"default:dirt",
-                    },
-	replace_with = "nether:sand",
-	replace_offset = -5,
+	--replace_rate = 10, --allow to spawn in the overworld without too much transformation
+	--replace_what = {
+		--	"default:sand",
+		--	"default:silver_sand",
+		--	"default:dirt_with_grass",
+		--	"default:dirt_with_snow",
+		--	"default:dirt_with_dry_grass",
+		--	"default:dirt_with_rainforest_litter",
+		--	"default:dirt",
+    --                },
+	--replace_with = "nether:sand",
+	--replace_offset = -5,
 	animation = animation_fly,
 	on_die = function(self, pos)
 		pos.y = pos.y + 0.5
