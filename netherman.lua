@@ -112,9 +112,8 @@ mobs:spawn({
 	max_light = 12, --15 = bright daylight
 	name = "nether_mobs:netherman",
 	nodes = {"nether:sand","nether:rack","nether:rack_deep"},
-	--restrict spawning to the nether:
-	--max_height = nether.DEPTH_CEILING,
-	--min_height = nether.DEPTH_FLOOR,
+	max_height = nethermobs.MAX_HEIGHT_NETHERMAN,
+	min_height = nethermobs.MIN_HEIGHT_NETHERMAN,
 	interval = 8,
 	chance = 50,
 	day_toggle = nil,

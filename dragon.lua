@@ -611,9 +611,8 @@ mobs:spawn({
 	nodes = {"nether:rack","nether:rack_deep","nether:basalt","nether:basalt_hewn","nether:basalt_chiselled"},
         neighbours = "air",
 	max_light = 14, --not in bright daylight
-	--restrict spawning to the nether:
-	--max_height = nether.DEPTH_CEILING,
-	--min_height = nether.DEPTH_FLOOR,
+	max_height = nethermobs.MAX_HEIGHT_DRAGON,
+	min_height = nethermobs.MIN_HEIGHT_DRAGON,
 	interval = 100,
 	chance = 150000,
 	day_toggle = nil,
