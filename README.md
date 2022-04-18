@@ -11,7 +11,7 @@ You can also change the spawn heights for the netherman and dragon (for example 
 
 ### Nether Man
 
-The nether man are the principal habitant of the nether world, they transform nodes like sand and dirt into nether sand.
+The nether man is the principal habitant of the nether world, it transforms nodes like sand and dirt into nether sand.
 
 ### Nether Dragon
 
