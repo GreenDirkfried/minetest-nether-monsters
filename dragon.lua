@@ -50,7 +50,7 @@ minetest.register_node("nether_mobs:dragon_scale_block", {
 	tiles = {"nether_dragon_scale_block_top.png", "nether_dragon_scale_block_top.png", "nether_dragon_scale_block.png"},
 	paramtype = "facedir",
 	is_ground_content = false,
-	groups = {cracky = 2, level = 2},
+	groups = {cracky = 1, level = 3},
 	sounds = default.node_sound_stone_defaults(),
 
 	on_place = minetest.rotate_node
@@ -59,7 +59,7 @@ minetest.register_node("nether_mobs:dragon_scale_block", {
 stairs.register_stair_and_slab(
 	"nether_dragon_scale_block",
 	"nether_mobs:dragon_scale_block",
-	{cracky = 2, level = 2},
+	{cracky = 1, level = 3},
 	{"nether_dragon_scale_block.png"},
 	"nether dragon scale stair",
 	"nether dragon scale slab",
