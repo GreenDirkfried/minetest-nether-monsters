@@ -333,8 +333,8 @@ local animation_land = {
 
 mobs:register_mob("nether_mobs:dragon", {
 	type = "monster",
-	hp_min = 100,
-	hp_max = 200,
+	hp_min = 200,
+	hp_max = 300,
 	armor = 80,
 	passive = false,
 	walk_velocity = 3,
@@ -349,12 +349,12 @@ mobs:register_mob("nether_mobs:dragon", {
 	pushable = false,
 	view_range = 60,
 	knock_back = 5,
-	damage = 34,
+	damage = 40,
 	--fear_height = 6,
 	fall_speed = -8,
 	fall_damage = 20,
 	water_damage = 5,
-	lava_damage = 1,
+	lava_damage = 0,
 	light_damage = 1,
 	suffocation = false,
 	floats = 1,
@@ -363,7 +363,7 @@ mobs:register_mob("nether_mobs:dragon", {
 	attack_animals = true,
 	attack_npcs = true,
 	attack_players = true,
-	attacks_monsters = true,
+	attacks_monsters = false,
 	attack_type = "dogshoot",
 	shoot_interval = 1,
 	dogshoot_switch = 2,
@@ -381,8 +381,8 @@ mobs:register_mob("nether_mobs:dragon", {
 	blood_texture = "nether_particle.png",
 	drops = {
 		{name = "mobs:meat_raw", chance = 1, min = 5, max = 8},
-		{name = "nether_mobs:dragon_scale", chance = 1, min = 8, max = 15},
-		{name = "nether_mobs:dragon_egg", chance = 1, min = 1, max = 2},
+		{name = "nether_mobs:dragon_scale", chance = 1, min = 1, max = 3},
+		{name = "nether_mobs:dragon_egg", chance = 9, min = 1, max = 1},
 		{name = "nether:rack", chance = 3, min = 2, max = 4},
 		{name = "nether:rack_deep", chance = 3, min = 1, max = 2},
 		{name = "nether:brick_compressed", chance = 5, min = 1, max = 2},
@@ -473,8 +473,8 @@ mobs:register_mob("nether_mobs:tamed_dragon", {
 	blood_texture = "nether_particle.png",
 	drops = {
 		{name = "mobs:meat_raw", chance = 1, min = 5, max = 8},
-		{name = "nether_mobs:dragon_scale", chance = 1, min = 1, max = 4}, --less scale dropped by tamed dragon
-		--{name = "nether_mobs:dragon_egg", chance = 1, min = 1, max = 2}, --would allow scale farming!
+		{name = "nether_mobs:dragon_scale", chance = 1, min = 1, max = 1}, --less scale dropped by tamed dragon
+		{name = "nether_mobs:dragon_egg", chance = 12, min = 1, max = 1},
 		{name = "nether:rack", chance = 3, min = 2, max = 4},
 		{name = "nether:rack_deep", chance = 3, min = 1, max = 2},
 		{name = "nether:brick_compressed", chance = 5, min = 1, max = 2},
@@ -608,13 +608,13 @@ self.saddle = true
 
 mobs:spawn({
 	name = "nether_mobs:dragon",
-	nodes = {"nether:rack","nether:rack_deep","nether:basalt","nether:basalt_hewn","nether:basalt_chiselled"},
+	nodes = {"nether:rack","nether:rack_deep"},
         neighbours = "air",
 	max_light = 14, --not in bright daylight
 	max_height = nethermobs.MAX_HEIGHT_DRAGON,
 	min_height = nethermobs.MIN_HEIGHT_DRAGON,
 	interval = 100,
-	chance = 150000,
+	chance = 64000,
 	day_toggle = nil,
 	active_object_count = 2,
 	on_spawn = function(self, pos)
