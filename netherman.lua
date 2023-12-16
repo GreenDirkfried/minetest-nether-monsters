@@ -1,36 +1,6 @@
 
 local S = minetest.get_translator("nether_mobs")
 
-
--- custom particle effects
-
-local effect = function(pos, amount, texture, min_size, max_size, radius, gravity, glow)
-
-	radius = radius or 2
-	min_size = min_size or 0.5
-	max_size = max_size or 1
-	gravity = gravity or -10
-	glow = glow or 0
-
-	minetest.add_particlespawner({
-		amount = amount,
-		time = 0.25,
-		minpos = pos,
-		maxpos = pos,
-		minvel = {x = -radius, y = -radius, z = -radius},
-		maxvel = {x = radius, y = radius, z = radius},
-		minacc = {x = 0, y = gravity, z = 0},
-		maxacc = {x = -20, y = gravity, z = 15},
-		minexptime = 0.1,
-		maxexptime = 1,
-		minsize = min_size,
-		maxsize = max_size,
-		texture = texture,
-		glow = glow,
-	})
-end
-
-
 -- Nether Man by rael5
 
 mobs:register_mob("nether_mobs:netherman", {
@@ -101,9 +71,9 @@ mobs:register_mob("nether_mobs:netherman", {
 	},
 	on_die = function(self, pos)
 		pos.y = pos.y + 0.5
-		effect(pos, 30, "nether_particle.png", 0.1, 2, 3, 5)
+		mobs:effect(pos, 30, "nether_particle.png", 0.1, 2, 3, 5)
 		pos.y = pos.y + 0.25
-		effect(pos, 30, "nether_particle.png", 0.1, 2, 3, 5)
+		mobs:effect(pos, 30, "nether_particle.png", 0.1, 2, 3, 5)
 	end,
 })
 
@@ -120,9 +90,9 @@ mobs:spawn({
 	active_object_count = 5,
 	on_spawn = function(self, pos)
 		pos.y = pos.y + 0.5
-		effect(pos, 30, "nether_particle.png", 0.1, 2, 3, 5)
+		mobs:effect(pos, 30, "nether_particle.png", 0.1, 2, 3, 5)
 		pos.y = pos.y + 0.25
-		effect(pos, 30, "nether_particle.png", 0.1, 2, 3, 5)
+		mobs:effect(pos, 30, "nether_particle.png", 0.1, 2, 3, 5)
 	end,
 })
 
