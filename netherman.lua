@@ -1,5 +1,5 @@
 
-local S = mobs.intllib
+local S = minetest.get_translator("nether_mobs")
 
 
 -- custom particle effects

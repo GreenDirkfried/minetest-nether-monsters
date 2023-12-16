@@ -41,7 +41,7 @@ local effect = function(pos, amount, texture, min_size, max_size, radius, gravit
 	})
 end
 
-local S = mobs.intllib
+local S = minetest.get_translator("nether_mobs")
 
 -- Dragon Scale
 
