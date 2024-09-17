@@ -97,7 +97,7 @@ if not nethermobs.custom_spawn then
 	})
 end
 
-mobs:register_egg("nether_mobs:netherman", S("nether man"), "nether_sand.png", 1)
+mobs:register_egg("nether_mobs:netherman", S("Nether Man"), "nether_sand.png", 1)
 
 
 mobs:alias_mob("mobs:netherman", "nether_mobs:netherman") -- compatibility

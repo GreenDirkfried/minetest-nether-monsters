@@ -14,7 +14,7 @@ nethermobs.MAX_HEIGHT_DRAGON = nether.DEPTH_CEILING
 nethermobs.MIN_HEIGHT_DRAGON = nether.DEPTH_FLOOR
 
 nethermobs.custom_spawn = false
-local input = io.open(path .. "/spawn.lua", "r")
+local input = io.open(modpath .. "/spawn.lua", "r")
 
 if input then
         nethermobs.custom_spawn = true

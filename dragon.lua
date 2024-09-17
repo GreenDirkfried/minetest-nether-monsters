@@ -18,7 +18,7 @@ local S = minetest.get_translator("nether_mobs")
 -- Dragon Scale
 
 minetest.register_node("nether_mobs:dragon_scale_block", {
-	description = "nether dragon scale block",
+	description = S("Nether Dragon Scale Block"),
 	tiles = {"nether_dragon_scale_block_top.png", "nether_dragon_scale_block_top.png", "nether_dragon_scale_block.png"},
 	paramtype = "facedir",
 	is_ground_content = false,
@@ -33,9 +33,12 @@ stairs.register_stair_and_slab(
 	"nether_mobs:dragon_scale_block",
 	{cracky = 1, level = 3},
 	{"nether_dragon_scale_block.png"},
-	"nether dragon scale stair",
-	"nether dragon scale slab",
-	default.node_sound_stone_defaults()
+	S("Nether Dragon Scale Stair"),
+	S("Nether Dragon Scale Slab"),
+	default.node_sound_stone_defaults(),
+	true,
+	S("Inner Nether Dragon Scale Stair"),
+	S("Outer Nether Dragon Scale Stair")
 )
 
 minetest.register_craft({
@@ -54,7 +57,7 @@ minetest.register_craft({
     })
 
 minetest.register_craftitem("nether_mobs:dragon_scale", {
-	description = "nether dragon scale",
+	description = S("Nether Dragon Scale"),
 	inventory_image = "nether_dragon_scale.png",
 })
 
@@ -77,7 +80,7 @@ minetest.register_craft({
 
 if minetest.get_modpath("3d_armor") then
     armor:register_armor("nether_mobs:dragon_helmet", {
-        description = S("dragon scales helmet"),
+        description = S("Dragon Scales Helmet"),
         inventory_image = "nether_dragon_inv_helmet.png",
         groups = {armor_head=1, armor_heal=15, armor_use=100, armor_fire=1},
         armor_groups = {fleshy=15},
@@ -86,7 +89,7 @@ if minetest.get_modpath("3d_armor") then
     })
 
     armor:register_armor("nether_mobs:dragon_chestplate", {
-        description = S("dragon scales chestplate"),
+        description = S("Dragon Scales Chestplate"),
         inventory_image = "nether_dragon_inv_chestplate.png",
         groups = {armor_torso=1, armor_heal=15, armor_use=100, armor_fire=1},
         armor_groups = {fleshy=20},
@@ -95,7 +98,7 @@ if minetest.get_modpath("3d_armor") then
     })
 
     armor:register_armor("nether_mobs:dragon_leggings", {
-        description = S("dragon scales leggings"),
+        description = S("Dragon Scales Leggings"),
         inventory_image = "nether_dragon_inv_leggings.png",
         groups = {armor_legs=1, armor_heal=15, armor_use=100, armor_fire=1},
         armor_groups = {fleshy=20},
@@ -104,7 +107,7 @@ if minetest.get_modpath("3d_armor") then
     })
 
     armor:register_armor("nether_mobs:dragon_boots", {
-        description = S("dragon scales boots"),
+        description = S("Dragon Scales Boots"),
         inventory_image = "nether_dragon_inv_boots.png",
         groups = {armor_feet=1, armor_heal=15, armor_use=100, armor_fire=1, physics_jump=0.5, physics_speed = 1},
         armor_groups = {fleshy=15},
@@ -113,7 +116,7 @@ if minetest.get_modpath("3d_armor") then
     })
 
     armor:register_armor("nether_mobs:dragon_shield", {
-        description = S("dragon scales shield"),
+        description = S("Dragon Scales Shield"),
         inventory_image = "nether_dragon_inven_shield.png",
         groups = {armor_shield=1, armor_heal=15, armor_use=100, armor_fire=2},
         armor_groups = {fleshy=20},
@@ -172,7 +175,7 @@ end
 -- Dragon Fire
 
 minetest.register_node("nether_mobs:dragon_fire", {
-	description = "nether dragon fire",
+	description = S("Nether Dragon Fire"),
 	drawtype = "firelike",
 	tiles = {{
 		name = "nether_dragon_fire_animated.png",
@@ -200,7 +203,7 @@ minetest.register_node("nether_mobs:dragon_fire", {
 })
 
 minetest.register_node(":nether_mobs:permanent_dragon_fire", { --only avaible in creative mode
-	description = "Permanent nether dragon fire",
+	description = S("Permanent Nether Dragon Fire"),
 	drawtype = "firelike",
 	tiles = {{
 		name = "nether_dragon_fire_animated.png",
@@ -598,14 +601,14 @@ if not nethermobs.custom_spawn then
 	})
 end
 
-mobs:register_egg("nether_mobs:tamed_dragon", S("nether dragon"), "mobs_chicken_egg.png^(nether_sand.png^fire_basic_flame.png^[mask:mobs_chicken_egg_overlay.png)", 1)
-mobs:register_egg("nether_mobs:dragon", S("nether dragon"), "nether_sand.png^nether_dragon_fire.png", 1)
+mobs:register_egg("nether_mobs:tamed_dragon", S("Nether Tamed Dragon"), "mobs_chicken_egg.png^(nether_sand.png^fire_basic_flame.png^[mask:mobs_chicken_egg_overlay.png)", 1)
+mobs:register_egg("nether_mobs:dragon", S("Nether Dragon"), "nether_sand.png^nether_dragon_fire.png", 1)
 
 -- to spawn childs from eggs
 
 minetest.register_craftitem("nether_mobs:dragon_egg", {
 
-		description = S("@1 (tamed)", S("nether dragon")),
+		description = S("@1 (tamed)", S("Nether Dragon")),
 		inventory_image = "mobs_chicken_egg.png^(nether_sand.png^fire_basic_flame.png^[mask:mobs_chicken_egg_overlay.png)",
 		groups = {spawn_egg = 2},
 		stack_max = 1,
