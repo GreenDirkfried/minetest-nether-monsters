@@ -577,25 +577,26 @@ self.saddle = true
 
 })
 
-
-mobs:spawn({
-	name = "nether_mobs:dragon",
-	nodes = {"nether:rack","nether:rack_deep"},
-        neighbours = "air",
-	max_light = 14, --not in bright daylight
-	max_height = nethermobs.MAX_HEIGHT_DRAGON,
-	min_height = nethermobs.MIN_HEIGHT_DRAGON,
-	interval = 100,
-	chance = 64000,
-	day_toggle = nil,
-	active_object_count = 2,
-	on_spawn = function(self, pos)
-		pos.y = pos.y + 0.5
-		mobs:effect(pos, 30, "nether_particle.png", 0.1, 2, 3, 5)
-		pos.y = pos.y + 0.25
-		mobs:effect(pos, 30, "nether_particle.png", 0.1, 2, 3, 5)
-	end,
-})
+if not nethermobs.custom_spawn then
+	mobs:spawn({
+		name = "nether_mobs:dragon",
+		nodes = {"nether:rack","nether:rack_deep"},
+			neighbours = "air",
+		max_light = 14, --not in bright daylight
+		max_height = nethermobs.MAX_HEIGHT_DRAGON,
+		min_height = nethermobs.MIN_HEIGHT_DRAGON,
+		interval = 100,
+		chance = 64000,
+		day_toggle = nil,
+		active_object_count = 2,
+		on_spawn = function(self, pos)
+			pos.y = pos.y + 0.5
+			mobs:effect(pos, 30, "nether_particle.png", 0.1, 2, 3, 5)
+			pos.y = pos.y + 0.25
+			mobs:effect(pos, 30, "nether_particle.png", 0.1, 2, 3, 5)
+		end,
+	})
+end
 
 mobs:register_egg("nether_mobs:tamed_dragon", S("nether dragon"), "mobs_chicken_egg.png^(nether_sand.png^fire_basic_flame.png^[mask:mobs_chicken_egg_overlay.png)", 1)
 mobs:register_egg("nether_mobs:dragon", S("nether dragon"), "nether_sand.png^nether_dragon_fire.png", 1)
