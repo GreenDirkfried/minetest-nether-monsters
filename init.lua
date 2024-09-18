@@ -44,7 +44,7 @@ if nethermobs.DRAGON_ENABLED then
 end
 
 if nethermobs.custom_spawn then
-        dofile(path .. "/spawn.lua")
+        dofile(modpath .. "/spawn.lua")
 end
 
 -- please read README.md
