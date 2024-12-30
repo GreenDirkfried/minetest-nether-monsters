@@ -601,7 +601,7 @@ if not nethermobs.custom_spawn then
 	})
 end
 
-mobs:register_egg("nether_mobs:tamed_dragon", S("Nether Tamed Dragon"), "mobs_chicken_egg.png^(nether_sand.png^fire_basic_flame.png^[mask:mobs_chicken_egg_overlay.png)", 1)
+mobs:register_egg("nether_mobs:tamed_dragon", S("Tamed Nether Dragon"), "mobs_chicken_egg.png^(nether_sand.png^fire_basic_flame.png^[mask:mobs_chicken_egg_overlay.png)", 1)
 mobs:register_egg("nether_mobs:dragon", S("Nether Dragon"), "nether_sand.png^nether_dragon_fire.png", 1)
 
 -- to spawn childs from eggs
